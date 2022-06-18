@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		43282806285944D300F92720 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43282805285944D300F92720 /* LoginScreen.swift */; };
 		43B01698285E10CC0072A630 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 43B01697285E10CC0072A630 /* SnapKit */; };
+		43B0169A285E1A1E0072A630 /* RegisterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B01699285E1A1E0072A630 /* RegisterScreen.swift */; };
 		43B4BB03285B6EEE00C3BBAA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B4BB02285B6EEE00C3BBAA /* HomeViewController.swift */; };
 		43B4BB05285B6EFC00C3BBAA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B4BB04285B6EFC00C3BBAA /* RegisterViewController.swift */; };
 		4ACA786B27B6BE670010F37F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACA786A27B6BE670010F37F /* AppDelegate.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		43282805285944D300F92720 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		43B01699285E1A1E0072A630 /* RegisterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreen.swift; sourceTree = "<group>"; };
 		43B4BB02285B6EEE00C3BBAA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		43B4BB04285B6EFC00C3BBAA /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		4ACA786727B6BE670010F37F /* Message.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Message.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				43B4BB04285B6EFC00C3BBAA /* RegisterViewController.swift */,
+				43B01699285E1A1E0072A630 /* RegisterScreen.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				43B4BB03285B6EEE00C3BBAA /* HomeViewController.swift in Sources */,
 				4ACA786F27B6BE670010F37F /* LoginViewController.swift in Sources */,
 				43282806285944D300F92720 /* LoginScreen.swift in Sources */,
+				43B0169A285E1A1E0072A630 /* RegisterScreen.swift in Sources */,
 				43B4BB05285B6EFC00C3BBAA /* RegisterViewController.swift in Sources */,
 				4ACA786B27B6BE670010F37F /* AppDelegate.swift in Sources */,
 				4ACA786D27B6BE670010F37F /* SceneDelegate.swift in Sources */,
