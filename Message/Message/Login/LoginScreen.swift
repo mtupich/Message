@@ -13,7 +13,19 @@ protocol LoginScreenProtocol: AnyObject {
   func setupAdicionalConfiguration()
 }
 
+protocol LoginTextFieldsProtocol: class {
+  func actionLoginBtn()
+  func actionRegisterBtn()
+}
+
 class LoginScreen: UIView, LoginScreenProtocol {
+  private weak var delegateVariable: LoginTextFieldsProtocol?
+  
+  // could be just the variable, but here were using a method to organized
+  func delegate(delegate: LoginTextFieldsProtocol){
+    delegateVariable = delegate
+  }
+  
   lazy var stackView: UIStackView = {
     let stack = UIStackView()
     stack.translatesAutoresizingMaskIntoConstraints = false
@@ -35,11 +47,12 @@ class LoginScreen: UIView, LoginScreenProtocol {
   }()
   
   lazy var logoAppImageView: UIImageView = {
+    // withRenderingMode -> Returns a new version of the image that uses the specified rendering mode.
     let image = UIImageView()
-    image.contentMode = .scaleAspectFit
     image.translatesAutoresizingMaskIntoConstraints = false
-    image.image = UIImage(named: "logo")
-    image.tintColor = .red
+    image.image = UIImage(named: "logo")?.withRenderingMode(.alwaysTemplate)
+    image.tintColor = .green
+    image.contentMode = .scaleAspectFit
     return image
   }()
   
@@ -69,31 +82,43 @@ class LoginScreen: UIView, LoginScreenProtocol {
     return tf
   }()
   
-  lazy var logarButton: UIButton = {
-    let button = UIButton()
-    button.translatesAutoresizingMaskIntoConstraints = false
-    button.setTitle("Logar", for: .normal)
-    button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
-    button.setTitleColor(.white, for: .normal)
-    button.clipsToBounds = true
-    button.layer.cornerRadius = 7.5
-    button.backgroundColor = UIColor(red: 3/255, green: 58/255, blue: 51/255, alpha: 1.0)
-    return button
+  lazy var loginButton: UIButton = {
+    let btn = UIButton()
+    btn.translatesAutoresizingMaskIntoConstraints = false
+    btn.setTitle("Logar", for: .normal)
+    btn.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+    btn.setTitleColor(.white, for: .normal)
+    btn.clipsToBounds = true
+    btn.layer.cornerRadius = 7.5
+    btn.backgroundColor = UIColor(red: 3/255, green: 58/255, blue: 51/255, alpha: 1.0)
+    btn.addTarget(self, action: #selector(didTapLoginBtn), for: .touchUpInside)
+    return btn
   }()
   
   lazy var registerButton: UIButton = {
     let register = UIButton()
     register.translatesAutoresizingMaskIntoConstraints = false
+    register.addTarget(self, action: #selector(didTapRegisterBtn), for: .touchUpInside)
+    register.setTitle("Não tem conta? Cadastre-se", for: .normal)
     return register
   }()
   
   override init(frame: CGRect) {
     super.init(frame: frame)
     setupAdicionalConfiguration()
+    backgroundColor = UIColor(red: 58.0/255.0, green: 132.0/255.0, blue: 123.0/255.0, alpha: 1)
   }
   
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
+  }
+  
+  @objc private func didTapLoginBtn(){
+    delegateVariable?.actionLoginBtn()
+  }
+  
+  @objc private func didTapRegisterBtn(){
+    delegateVariable?.actionRegisterBtn()
   }
   
   func builHierarchy() {
@@ -102,7 +127,7 @@ class LoginScreen: UIView, LoginScreenProtocol {
     addSubview(stackView)
     stackView.addArrangedSubview(emailTextField)
     stackView.addArrangedSubview(passwordTextField)
-    stackView.addArrangedSubview(logarButton)
+    stackView.addArrangedSubview(loginButton)
     stackView.addArrangedSubview(registerButton)
   }
   
@@ -126,6 +151,11 @@ class LoginScreen: UIView, LoginScreenProtocol {
   func setupAdicionalConfiguration() {
     builHierarchy()
     setupScreenConstraints()
+  }
+  
+  func setupTextFieldDelegate(delegate: UITextFieldDelegate){
+    emailTextField.delegate = delegate
+    passwordTextField.delegate = delegate
   }
   
 }

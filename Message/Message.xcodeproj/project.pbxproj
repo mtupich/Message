@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		43282806285944D300F92720 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43282805285944D300F92720 /* LoginScreen.swift */; };
+		43B01698285E10CC0072A630 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 43B01697285E10CC0072A630 /* SnapKit */; };
+		43B4BB03285B6EEE00C3BBAA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B4BB02285B6EEE00C3BBAA /* HomeViewController.swift */; };
+		43B4BB05285B6EFC00C3BBAA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B4BB04285B6EFC00C3BBAA /* RegisterViewController.swift */; };
 		4ACA786B27B6BE670010F37F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACA786A27B6BE670010F37F /* AppDelegate.swift */; };
 		4ACA786D27B6BE670010F37F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACA786C27B6BE670010F37F /* SceneDelegate.swift */; };
 		4ACA786F27B6BE670010F37F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACA786E27B6BE670010F37F /* LoginViewController.swift */; };
@@ -17,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		43282805285944D300F92720 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		43B4BB02285B6EEE00C3BBAA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		43B4BB04285B6EFC00C3BBAA /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		4ACA786727B6BE670010F37F /* Message.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Message.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ACA786A27B6BE670010F37F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4ACA786C27B6BE670010F37F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,12 +36,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43B01698285E10CC0072A630 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43B4BB00285B6ED100C3BBAA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				43B4BB02285B6EEE00C3BBAA /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		43B4BB01285B6ED800C3BBAA /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				43B4BB04285B6EFC00C3BBAA /* RegisterViewController.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
 		4AB6E1D427B6F68900AE749F /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +87,8 @@
 		4ACA786927B6BE670010F37F /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				43B4BB01285B6ED800C3BBAA /* Register */,
+				43B4BB00285B6ED100C3BBAA /* Home */,
 				4AB6E1D427B6F68900AE749F /* Login */,
 				4ACA786A27B6BE670010F37F /* AppDelegate.swift */,
 				4ACA786C27B6BE670010F37F /* SceneDelegate.swift */,
@@ -91,6 +115,9 @@
 			dependencies = (
 			);
 			name = Message;
+			packageProductDependencies = (
+				43B01697285E10CC0072A630 /* SnapKit */,
+			);
 			productName = Message;
 			productReference = 4ACA786727B6BE670010F37F /* Message.app */;
 			productType = "com.apple.product-type.application";
@@ -119,6 +146,9 @@
 				Base,
 			);
 			mainGroup = 4ACA785E27B6BE670010F37F;
+			packageReferences = (
+				43B01696285E10CC0072A630 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 4ACA786827B6BE670010F37F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -145,8 +175,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43B4BB03285B6EEE00C3BBAA /* HomeViewController.swift in Sources */,
 				4ACA786F27B6BE670010F37F /* LoginViewController.swift in Sources */,
 				43282806285944D300F92720 /* LoginScreen.swift in Sources */,
+				43B4BB05285B6EFC00C3BBAA /* RegisterViewController.swift in Sources */,
 				4ACA786B27B6BE670010F37F /* AppDelegate.swift in Sources */,
 				4ACA786D27B6BE670010F37F /* SceneDelegate.swift in Sources */,
 			);
@@ -360,6 +392,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		43B01696285E10CC0072A630 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		43B01697285E10CC0072A630 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43B01696285E10CC0072A630 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4ACA785F27B6BE670010F37F /* Project object */;
 }

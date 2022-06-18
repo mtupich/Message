@@ -7,8 +7,8 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
-  
+class LoginViewController: UIViewController, LoginTextFieldsProtocol {
+
   private var loginScreen: LoginScreen?
   
   override func loadView() {
@@ -18,7 +18,40 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = UIColor(red: 58.0/255.0, green: 132.0/255.0, blue: 123.0/255.0, alpha: 1)
+    loginScreen?.setupTextFieldDelegate(delegate: self)
+    loginScreen?.delegate(delegate: self)
   }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+  
+  func textFieldDidBeginEditing(_ textField: UITextField) {
+    print("textFieldDidBeginEditing")
+  }
+  
+  func textFieldDidEndEditing(_ textField: UITextField) {
+    print("textFieldDidEndEditing")
+  }
+  
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    // faz o teclado baixar quando o usuario aperta o enter (return)
+    print("textFieldShouldReturn")
+    textField.resignFirstResponder()
+    return true
+  }
+}
+
+extension LoginViewController {
+  func actionLoginBtn() {
+    let homeController = HomeViewController()
+    navigationController?.pushViewController(homeController, animated: true)
+  }
+  
+  func actionRegisterBtn() {
+    let registerController = RegisterViewController()
+    navigationController?.pushViewController(registerController, animated: true)
+  }
+  
+  
 }
 
